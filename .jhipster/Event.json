@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "year",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "4",
+            "fieldValidateRulesMaxlength": "4"
+        },
+        {
+            "fieldName": "startDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "proposalDeadline",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180108124019",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "event",
+    "pagination": "no"
+}

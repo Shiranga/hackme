@@ -1,0 +1,25 @@
+{
+    "hackMeApp": {
+        "prize" : {
+            "home": {
+                "title": "Prizes",
+                "createLabel": "Skapa en ny Prize",
+                "createOrEditLabel": "Skapa eller ändra en Prize",
+                "search": "Sök efter Prize"
+            },
+            "created": "En ny Prize är skapad med id {{ param }}",
+            "updated": "En Prize är uppdaterad med id  {{ param }}",
+            "deleted": "En Prize är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Prize {{ id }}?"
+            },
+            "detail": {
+                "title": "Prize"
+            },
+            "place": "Place",
+            "prize": "Prize",
+            "isActive": "Is Active",
+            "event": "Event"
+        }
+    }
+}

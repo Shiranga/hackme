@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="hackMeApp.member.detail.title">Member</span> {{vm.member.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="hackMeApp.member.name">Name</span></dt>
+        <dd>
+            <span>{{vm.member.name}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.member.image">Image</span></dt>
+        <dd>
+            <span>{{vm.member.image}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.member.contact">Contact</span></dt>
+        <dd>
+            <span>{{vm.member.contact}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.member.email">Email</span></dt>
+        <dd>
+            <span>{{vm.member.email}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.member.gender">Gender</span></dt>
+        <dd>
+            <span data-translate="{{'hackMeApp.Gender.' + vm.member.gender}}">{{vm.member.gender}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.member.isActive">Is Active</span></dt>
+        <dd>
+            <span>{{vm.member.isActive}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.member.team">Team</span></dt>
+        <dd>
+            <a ui-sref="team-detail({id:vm.member.teamId})">{{vm.member.teamName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="member-detail.edit({id:vm.member.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

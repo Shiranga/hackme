@@ -1,0 +1,25 @@
+{
+    "hackMeApp": {
+        "category" : {
+            "home": {
+                "title": "Categories",
+                "createLabel": "Skapa en ny Category",
+                "createOrEditLabel": "Skapa eller ändra en Category",
+                "search": "Sök efter Category"
+            },
+            "created": "En ny Category är skapad med id {{ param }}",
+            "updated": "En Category är uppdaterad med id  {{ param }}",
+            "deleted": "En Category är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Category {{ id }}?"
+            },
+            "detail": {
+                "title": "Category"
+            },
+            "name": "Name",
+            "description": "Description",
+            "experts": "Experts",
+            "isActive": "Is Active"
+        }
+    }
+}

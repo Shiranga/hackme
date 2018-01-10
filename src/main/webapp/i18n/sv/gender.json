@@ -1,0 +1,10 @@
+{
+    "hackMeApp": {
+        "Gender" : {
+            "null": "",
+            "Male": "Male",
+            "Female": "Female",
+            "Other": "Other"
+        }
+    }
+}

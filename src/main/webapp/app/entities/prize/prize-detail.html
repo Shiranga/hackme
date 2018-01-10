@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="hackMeApp.prize.detail.title">Prize</span> {{vm.prize.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="hackMeApp.prize.place">Place</span></dt>
+        <dd>
+            <span>{{vm.prize.place}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.prize.prize">Prize</span></dt>
+        <dd>
+            <span>{{vm.prize.prize}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.prize.isActive">Is Active</span></dt>
+        <dd>
+            <span>{{vm.prize.isActive}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.prize.event">Event</span></dt>
+        <dd>
+            <a ui-sref="event-detail({id:vm.prize.eventId})">{{vm.prize.eventName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="prize-detail.edit({id:vm.prize.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

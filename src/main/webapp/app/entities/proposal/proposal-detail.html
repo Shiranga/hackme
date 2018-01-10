@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="hackMeApp.proposal.detail.title">Proposal</span> {{vm.proposal.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="hackMeApp.proposal.title">Title</span></dt>
+        <dd>
+            <span>{{vm.proposal.title}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.proposal.filePath">File Path</span></dt>
+        <dd>
+            <span>{{vm.proposal.filePath}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.proposal.comment">Comment</span></dt>
+        <dd>
+            <span>{{vm.proposal.comment}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.proposal.isActive">Is Active</span></dt>
+        <dd>
+            <span>{{vm.proposal.isActive}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.proposal.category">Category</span></dt>
+        <dd>
+            <a ui-sref="category-detail({id:vm.proposal.categoryId})">{{vm.proposal.categoryName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="proposal-detail.edit({id:vm.proposal.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

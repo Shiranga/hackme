@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProposalLabel" data-translate="hackMeApp.proposal.home.createOrEditLabel">Create or edit a Proposal</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.proposal.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.proposal.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.proposal.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.proposal.title"
+                    required />
+            <div ng-show="editForm.title.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.title.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.proposal.filePath" for="field_filePath">File Path</label>
+            <input type="text" class="form-control" name="filePath" id="field_filePath"
+                    ng-model="vm.proposal.filePath"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.proposal.comment" for="field_comment">Comment</label>
+            <input type="text" class="form-control" name="comment" id="field_comment"
+                    ng-model="vm.proposal.comment"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.proposal.isActive" for="field_isActive">Is Active</label>
+            <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                    ng-model="vm.proposal.isActive"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="hackMeApp.proposal.category" for="field_category">Category</label>
+            <select class="form-control" id="field_category" name="category" ng-model="vm.proposal.categoryId" ng-options="category.id as category.name for category in vm.categories"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

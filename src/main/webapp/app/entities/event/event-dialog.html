@@ -1,0 +1,96 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEventLabel" data-translate="hackMeApp.event.home.createOrEditLabel">Create or edit a Event</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.event.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.event.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.event.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.event.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.event.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.event.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.event.year" for="field_year">Year</label>
+            <input type="text" class="form-control" name="year" id="field_year"
+                    ng-model="vm.event.year"
+                    ng-minlength="4" ng-maxlength="4" />
+            <div ng-show="editForm.year.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.year.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="4">
+                    This field is required to be at least 4 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.year.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="4">
+                    This field cannot be longer than 4 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.event.startDateTime" for="field_startDateTime">Start Date Time</label>
+                <div class="input-group">
+                    <input id="field_startDateTime" type="text" class="form-control" name="startDateTime" datetime-picker="{{dateformat}}" ng-model="vm.event.startDateTime" is-open="vm.datePickerOpenStatus.startDateTime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDateTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.event.endDateTime" for="field_endDateTime">End Date Time</label>
+                <div class="input-group">
+                    <input id="field_endDateTime" type="text" class="form-control" name="endDateTime" datetime-picker="{{dateformat}}" ng-model="vm.event.endDateTime" is-open="vm.datePickerOpenStatus.endDateTime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDateTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.event.proposalDeadline" for="field_proposalDeadline">Proposal Deadline</label>
+                <div class="input-group">
+                    <input id="field_proposalDeadline" type="text" class="form-control" name="proposalDeadline" datetime-picker="{{dateformat}}" ng-model="vm.event.proposalDeadline" is-open="vm.datePickerOpenStatus.proposalDeadline"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('proposalDeadline')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.event.isActive" for="field_isActive">Is Active</label>
+            <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                    ng-model="vm.event.isActive"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

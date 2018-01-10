@@ -1,0 +1,27 @@
+{
+    "hackMeApp": {
+        "proposal" : {
+            "home": {
+                "title": "Proposals",
+                "createLabel": "Skapa en ny Proposal",
+                "createOrEditLabel": "Skapa eller ändra en Proposal",
+                "search": "Sök efter Proposal"
+            },
+            "created": "En ny Proposal är skapad med id {{ param }}",
+            "updated": "En Proposal är uppdaterad med id  {{ param }}",
+            "deleted": "En Proposal är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Proposal {{ id }}?"
+            },
+            "detail": {
+                "title": "Proposal"
+            },
+            "title": "Title",
+            "filePath": "File Path",
+            "comment": "Comment",
+            "isActive": "Is Active",
+            "team": "Team",
+            "category": "Category"
+        }
+    }
+}

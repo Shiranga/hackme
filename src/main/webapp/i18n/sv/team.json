@@ -1,0 +1,25 @@
+{
+    "hackMeApp": {
+        "team" : {
+            "home": {
+                "title": "Teams",
+                "createLabel": "Skapa en ny Team",
+                "createOrEditLabel": "Skapa eller ändra en Team",
+                "search": "Sök efter Team"
+            },
+            "created": "En ny Team är skapad med id {{ param }}",
+            "updated": "En Team är uppdaterad med id  {{ param }}",
+            "deleted": "En Team är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Team {{ id }}?"
+            },
+            "detail": {
+                "title": "Team"
+            },
+            "name": "Name",
+            "isActive": "Is Active",
+            "event": "Event",
+            "proposal": "Proposal"
+        }
+    }
+}

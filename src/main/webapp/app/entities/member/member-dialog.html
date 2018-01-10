@@ -1,0 +1,82 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMemberLabel" data-translate="hackMeApp.member.home.createOrEditLabel">Create or edit a Member</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.member.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.member.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.member.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.member.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.member.image" for="field_image">Image</label>
+            <input type="text" class="form-control" name="image" id="field_image"
+                    ng-model="vm.member.image"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.member.contact" for="field_contact">Contact</label>
+            <input type="text" class="form-control" name="contact" id="field_contact"
+                    ng-model="vm.member.contact"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.member.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.member.email"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.member.gender" for="field_gender">Gender</label>
+            <select class="form-control" name="gender" ng-model="vm.member.gender" id="field_gender" required>
+                <option value="Male" data-translate="hackMeApp.Gender.Male">Male</option>
+                <option value="Female" data-translate="hackMeApp.Gender.Female">Female</option>
+                <option value="Other" data-translate="hackMeApp.Gender.Other">Other</option>
+            </select>
+            <div ng-show="editForm.gender.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.gender.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hackMeApp.member.isActive" for="field_isActive">Is Active</label>
+            <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                    ng-model="vm.member.isActive"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="hackMeApp.member.team" for="field_team">Team</label>
+            <select class="form-control" id="field_team" name="team" ng-model="vm.member.teamId" ng-options="team.id as team.name for team in vm.teams"             required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.team.$invalid">
+            <p class="help-block"
+                ng-show="editForm.team.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

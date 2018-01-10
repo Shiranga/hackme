@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "event",
+            "otherEntityName": "event",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "place",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prize",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180108124917",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "prize",
+    "pagination": "no"
+}

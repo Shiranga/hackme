@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="hackMeApp.prize.home.title">Prizes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="prize.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="hackMeApp.prize.home.createLabel">
+                        Create new Prize
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="hackMeApp.prize.place">Place</span></th>
+                    <th><span data-translate="hackMeApp.prize.prize">Prize</span></th>
+                    <th><span data-translate="hackMeApp.prize.isActive">Is Active</span></th>
+                    <th><span data-translate="hackMeApp.prize.event">Event</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="prize in vm.prizes track by prize.id">
+                    <td><a ui-sref="prize-detail({id:prize.id})">{{prize.id}}</a></td>
+                    <td>{{prize.place}}</td>
+                    <td>{{prize.prize}}</td>
+                    <td>{{prize.isActive}}</td>
+                    <td>
+                        <a ui-sref="event-detail({id:prize.eventId})">{{prize.eventName}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="prize-detail({id:prize.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="prize.edit({id:prize.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="prize.delete({id:prize.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

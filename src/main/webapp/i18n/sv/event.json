@@ -1,0 +1,28 @@
+{
+    "hackMeApp": {
+        "event" : {
+            "home": {
+                "title": "Events",
+                "createLabel": "Skapa en ny Event",
+                "createOrEditLabel": "Skapa eller ändra en Event",
+                "search": "Sök efter Event"
+            },
+            "created": "En ny Event är skapad med id {{ param }}",
+            "updated": "En Event är uppdaterad med id  {{ param }}",
+            "deleted": "En Event är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Event {{ id }}?"
+            },
+            "detail": {
+                "title": "Event"
+            },
+            "name": "Name",
+            "description": "Description",
+            "year": "Year",
+            "startDateTime": "Start Date Time",
+            "endDateTime": "End Date Time",
+            "proposalDeadline": "Proposal Deadline",
+            "isActive": "Is Active"
+        }
+    }
+}

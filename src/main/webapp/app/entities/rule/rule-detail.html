@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="hackMeApp.rule.detail.title">Rule</span> {{vm.rule.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="hackMeApp.rule.title">Title</span></dt>
+        <dd>
+            <span>{{vm.rule.title}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.rule.description">Description</span></dt>
+        <dd>
+            <span>{{vm.rule.description}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.rule.isActive">Is Active</span></dt>
+        <dd>
+            <span>{{vm.rule.isActive}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.rule.event">Event</span></dt>
+        <dd>
+            <a ui-sref="event-detail({id:vm.rule.eventId})">{{vm.rule.eventName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="rule-detail.edit({id:vm.rule.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

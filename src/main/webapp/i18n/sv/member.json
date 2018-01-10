@@ -1,0 +1,28 @@
+{
+    "hackMeApp": {
+        "member" : {
+            "home": {
+                "title": "Members",
+                "createLabel": "Skapa en ny Member",
+                "createOrEditLabel": "Skapa eller ändra en Member",
+                "search": "Sök efter Member"
+            },
+            "created": "En ny Member är skapad med id {{ param }}",
+            "updated": "En Member är uppdaterad med id  {{ param }}",
+            "deleted": "En Member är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Member {{ id }}?"
+            },
+            "detail": {
+                "title": "Member"
+            },
+            "name": "Name",
+            "image": "Image",
+            "contact": "Contact",
+            "email": "Email",
+            "gender": "Gender",
+            "isActive": "Is Active",
+            "team": "Team"
+        }
+    }
+}

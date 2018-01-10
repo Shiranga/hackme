@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="hackMeApp.member.home.title">Members</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="member.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="hackMeApp.member.home.createLabel">
+                        Create new Member
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="hackMeApp.member.name">Name</span></th>
+                    <th><span data-translate="hackMeApp.member.image">Image</span></th>
+                    <th><span data-translate="hackMeApp.member.contact">Contact</span></th>
+                    <th><span data-translate="hackMeApp.member.email">Email</span></th>
+                    <th><span data-translate="hackMeApp.member.gender">Gender</span></th>
+                    <th><span data-translate="hackMeApp.member.isActive">Is Active</span></th>
+                    <th><span data-translate="hackMeApp.member.team">Team</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="member in vm.members track by member.id">
+                    <td><a ui-sref="member-detail({id:member.id})">{{member.id}}</a></td>
+                    <td>{{member.name}}</td>
+                    <td>{{member.image}}</td>
+                    <td>{{member.contact}}</td>
+                    <td>{{member.email}}</td>
+                    <td data-translate="{{'hackMeApp.Gender.' + member.gender}}">{{member.gender}}</td>
+                    <td>{{member.isActive}}</td>
+                    <td>
+                        <a ui-sref="team-detail({id:member.teamId})">{{member.teamName}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="member-detail({id:member.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="member.edit({id:member.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="member.delete({id:member.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

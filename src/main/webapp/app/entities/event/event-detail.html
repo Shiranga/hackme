@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="hackMeApp.event.detail.title">Event</span> {{vm.event.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="hackMeApp.event.name">Name</span></dt>
+        <dd>
+            <span>{{vm.event.name}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.event.description">Description</span></dt>
+        <dd>
+            <span>{{vm.event.description}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.event.year">Year</span></dt>
+        <dd>
+            <span>{{vm.event.year}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.event.startDateTime">Start Date Time</span></dt>
+        <dd>
+            <span>{{vm.event.startDateTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.event.endDateTime">End Date Time</span></dt>
+        <dd>
+            <span>{{vm.event.endDateTime | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.event.proposalDeadline">Proposal Deadline</span></dt>
+        <dd>
+            <span>{{vm.event.proposalDeadline | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="hackMeApp.event.isActive">Is Active</span></dt>
+        <dd>
+            <span>{{vm.event.isActive}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="event-detail.edit({id:vm.event.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

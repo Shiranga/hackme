@@ -1,0 +1,25 @@
+{
+    "hackMeApp": {
+        "rule" : {
+            "home": {
+                "title": "Rules",
+                "createLabel": "Skapa en ny Rule",
+                "createOrEditLabel": "Skapa eller ändra en Rule",
+                "search": "Sök efter Rule"
+            },
+            "created": "En ny Rule är skapad med id {{ param }}",
+            "updated": "En Rule är uppdaterad med id  {{ param }}",
+            "deleted": "En Rule är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Rule {{ id }}?"
+            },
+            "detail": {
+                "title": "Rule"
+            },
+            "title": "Title",
+            "description": "Description",
+            "isActive": "Is Active",
+            "event": "Event"
+        }
+    }
+}
